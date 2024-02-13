@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "MNIST-From-Scratch": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}

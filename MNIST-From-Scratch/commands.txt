@@ -1,0 +1,32 @@
+.\MNIST-From-Scratch.exe `
+DecodeImage `
+imagesPath=A:\MNIST-Data\t10k-images.idx3-ubyte `
+imageIndex=1 `
+outPath=A:\MNIST-Data\out.png
+
+.\MNIST-From-Scratch.exe `
+GradientCheck `
+testCount=50
+
+.\MNIST-From-Scratch.exe `
+Inference `
+modelPath=A:\MNIST-Data\checkpoints\checkpoint_final.json `
+imagePath=A:\MNIST-Data\checkpoints\image_2.png
+
+In the Training command, checkpointLoadPath is optional and without it, it will create and save an initialization checkpoint.
+Performance can vary a lot based off initialization, so consider reusing initialization checkpoints for testing stuff
+
+.\MNIST-From-Scratch.exe `
+Training `
+trainImagesPath=A:\MNIST-Data\train-images.idx3-ubyte `
+testImagesPath=A:\MNIST-Data\t10k-images.idx3-ubyte `
+trainLabelsPath=A:\MNIST-Data\train-labels.idx1-ubyte `
+testLabelsPath=A:\MNIST-Data\t10k-labels.idx1-ubyte `
+batchSize=256 `
+learningRate=0.001 `
+steps=50000 `
+testFrequency=2500 `
+testBatchSize=10000 `
+checkpointSaveFrequency=5000000 `
+checkpointSavePath=A:\MNIST-Data\checkpoints\ `
+checkpointLoadPath=A:\MNIST-Data\checkpoints\checkpoint_final_.252L_256_.001_50k.json
